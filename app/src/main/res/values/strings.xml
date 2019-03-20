@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ProjectTest</string>
+    <string name="title_activity_main">Home</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="randomize">Randomize</string>
+    <string name="fliportail">Flip or Tails</string>
+    <string name="dice">Roll dice</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about">Xin chào các bạn, App này được Hồng Đăng và Phú phát triển để chơi chơi thử xem các bạn có mấy quả thận để làm bet thủ không thôi xD</string>
+    <string name="roll_roll_roll_just_random_no_trick_here">Roll! Roll! Roll! Just Random ? No trick here ?</string>
+    <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="min">Minium</string>
+    <string name="max">Maxium</string>
+    <string name="number">Dice number</string>
+    <string name="title_activity_history">HistoryActivity</string>
+</resources>

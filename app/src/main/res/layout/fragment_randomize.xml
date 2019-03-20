@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_shuffle_black_24dp"
+        android:background="@drawable/circle_shape"
+        android:backgroundTint="@color/colorSecondary"
+        android:padding="@dimen/activity_vertical_margin"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        />
+    <TextView
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:lines="2"
+        android:text="@string/lorem"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:background="@color/colorSecondary" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/min"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/colorSecondary"
+            android:outlineSpotShadowColor="@color/colorSecondary"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/edtMin"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="@dimen/activity_vertical_margin"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/max"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/colorSecondary"
+            android:outlineSpotShadowColor="@color/colorSecondary"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/edtMax"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/colorSecondary"
+        android:shadowColor="@color/design_default_color_primary"
+        android:text="Roll"
+        android:id="@+id/btnRoll"
+        android:textColor="@color/design_default_color_primary"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="888"
+        android:textSize="80dp"
+        android:visibility="invisible"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="check your history here!!!"
+        android:clickable="true"
+        android:id="@+id/tvHistory"
+        />
+</LinearLayout>
