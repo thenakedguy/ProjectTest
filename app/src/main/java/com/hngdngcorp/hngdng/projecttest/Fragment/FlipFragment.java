@@ -13,10 +13,15 @@ import androidx.fragment.app.Fragment;
 import com.hngdngcorp.hngdng.projecttest.HistoryActivity;
 import com.hngdngcorp.hngdng.projecttest.R;
 
+import java.util.Random;
+
 
 public class FlipFragment extends Fragment {
-    private Button mBtnRoll;
-    private TextView mTvHistory;
+
+    private Button btnRoll;
+    private TextView tvRFlipsesult;
+    private TextView tvHistory;
+
 
 
 
@@ -26,10 +31,12 @@ public class FlipFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_flip, container, false);
 
-        mBtnRoll = view.findViewById(R.id.btnRoll);
-        mTvHistory = view.findViewById(R.id.tvHistory);
+        btnRoll = view.findViewById(R.id.btnRoll);
+        tvRFlipsesult = view.findViewById(R.id.tvRFlipsesult);
+        tvHistory = view.findViewById(R.id.tvHistory);
 
-        mTvHistory.setOnClickListener(new View.OnClickListener() {
+
+        tvHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent(getActivity(), HistoryActivity.class);
@@ -37,7 +44,26 @@ public class FlipFragment extends Fragment {
             }
         });
 
+        btnRoll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roll();
+            }
+        });
+
+
         return view;
+    }
+
+    private void roll() {
+        int randomNumber = new Random().nextInt(2) + 1;
+        if (randomNumber == 1){
+            tvRFlipsesult.setText("FLIPS");
+            tvRFlipsesult.setVisibility(View.VISIBLE);
+        }else {
+            tvRFlipsesult.setText("TAILS");
+            tvRFlipsesult.setVisibility(View.VISIBLE);
+        }
     }
 
 
