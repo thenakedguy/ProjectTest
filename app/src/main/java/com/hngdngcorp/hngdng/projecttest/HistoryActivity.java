@@ -1,12 +1,16 @@
 package com.hngdngcorp.hngdng.projecttest;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.hngdngcorp.hngdng.projecttest.Adapter.RandomizeAdapter;
+import com.hngdngcorp.hngdng.projecttest.Model.Randomize;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
@@ -24,7 +28,9 @@ public class HistoryActivity extends AppCompatActivity implements AdapterView.On
     private Spinner mSpinner;
     private RecyclerView mLvHistory;
     private Button mBtnClear;
-
+    private SQLiteDatabase sqLiteDatabase;
+    private List<Randomize> randomizes = new ArrayList<>();
+    private RandomizeAdapter randomizeAdapter;
 
 
     @Override
@@ -44,8 +50,6 @@ public class HistoryActivity extends AppCompatActivity implements AdapterView.On
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,categories);
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         mSpinner.setAdapter(adapter);
-
-
     }
 
     @Override
@@ -54,6 +58,10 @@ public class HistoryActivity extends AppCompatActivity implements AdapterView.On
      switch (item) {
          case "Randomize" :
              Toast.makeText(this,"Rd",Toast.LENGTH_LONG).show();
+             randomizeAdapter = new RandomizeAdapter(this,randomizes);
+             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+             mLvHistory.setLayoutManager(layoutManager);
+             mLvHistory.setAdapter(randomizeAdapter);
              break;
          case "Dice" :
              Toast.makeText(this,"dice",Toast.LENGTH_LONG).show();

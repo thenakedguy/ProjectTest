@@ -16,10 +16,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.hngdngcorp.hngdng.projecttest.Database.DBHelper;
 import com.hngdngcorp.hngdng.projecttest.HistoryActivity;
 import com.hngdngcorp.hngdng.projecttest.MainActivity;
+import com.hngdngcorp.hngdng.projecttest.Model.Randomize;
 import com.hngdngcorp.hngdng.projecttest.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 
@@ -89,7 +94,22 @@ public class RandomizeFragment extends Fragment {
         final int random = new Random().nextInt((max - min) + 1) + min;
         mTvResult.setText(String.valueOf(random));
         mTvResult.setVisibility(View.VISIBLE);
+        Randomize randomize = new Randomize();
+        String dateStr = "04/05/2010";
 
+        SimpleDateFormat curFormater = new SimpleDateFormat("dd/MM/yyyy");
+        Date dateObj = null;
+        try {
+            dateObj = curFormater.parse(dateStr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        SimpleDateFormat postFormater = new SimpleDateFormat("MMMM dd, yyyy");
+
+        randomize.date = postFormater.format(dateObj);
+        randomize.result = random;
+        DBHelper dbHelper = new DBHelper(getContext());
+        dbHelper.insertRandomizeResult(randomize);
 
     }
 
